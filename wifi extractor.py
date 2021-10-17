@@ -6,7 +6,7 @@
 import  subprocess
 
 def get_wifi_profiles():
-    # check_output() it's take one output i.e  a list
+    # check_output() it's take one output i.e  a list added
     meta_data = subprocess.check_output(['netsh', 'wlan', 'show', 'profiles'])
     print(meta_data)  # This gives Information in the form of Binary
     print(type(meta_data))
