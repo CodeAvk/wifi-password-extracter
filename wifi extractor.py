@@ -1,7 +1,7 @@
 # To See wifi Password in Wiondows
 # Basic Process
 
-# open Comand Promt and Type -netsh wlan show profiles
+# open Command Promt and Type -netsh wlan show profiles
 
 import  subprocess
 
@@ -12,21 +12,23 @@ def get_wifi_profiles():
     print(type(meta_data))
 
     # To convert byte into String by using decode function
+    
     data = meta_data.decode("utf-8")
-    # print(data)
+    
+    
 
     # Now we get our information as well as some unnecessary data
     # to print only valid dataf
     data = data.split("\n")
-    # print(data)
+    
 
     names = []
 
     for line in data:
         if " All User Profile     : " in line:
-            # print(line)
+            
             name = line.split(":")[1]
-            # names.append(name)
+            
             names.append(name[1:-1])
 
     return names
